@@ -8,7 +8,7 @@
 
 // Enum for aiming state
 UENUM()
-enum class EFiringStatus : uint8 {Aiming, Locked, Reloading};
+enum class EFiringStatus : uint8 { Reloading , Aiming, Locked };
 
 // Forward Declaration
 class UTankBarrel;
@@ -44,6 +44,8 @@ private:
 
 	void MoveBarrelTowards(FVector AimDirection);
 
+	bool IsBarrelMoving();
+	
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
 
@@ -57,4 +59,6 @@ private:
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	double LastFireTime = 0;
+
+	FVector AimDirection;
 };
