@@ -9,7 +9,6 @@
 // Forward Declarations
 class UTankBarrel;
 class UTankAimingComponent;
-class UTankMovementComponent;
 class AProjectile;
 
 UCLASS()
@@ -40,9 +39,6 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly)
 	UTankAimingComponent * TankAimingComponent = nullptr;
-
-	UPROPERTY(BlueprintReadOnly)
-	UTankMovementComponent * TankMovementComponent = nullptr;
 
 	//Local barrel reference for spawning projectile
 	UTankBarrel* Barrel = nullptr; // TODO Remove
