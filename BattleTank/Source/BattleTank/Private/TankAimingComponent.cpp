@@ -53,6 +53,12 @@ bool UTankAimingComponent::IsBarrelMoving()
 	return !BarrelForward.Equals(AimDirection, 0.01); // vectors are equal
 }
 
+EFiringStatus UTankAimingComponent::GetFiringStatus() const
+{
+	return FiringStatus;
+}
+
+
 void UTankAimingComponent::AimAt(FVector OutHitLocation)
 {
 	if (!ensure(Barrel)) { return; }
