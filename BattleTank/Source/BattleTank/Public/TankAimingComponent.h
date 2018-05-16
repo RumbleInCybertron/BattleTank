@@ -8,7 +8,7 @@
 
 // Enum for aiming state
 UENUM()
-enum class EFiringStatus : uint8 { Reloading , Aiming, Locked };
+enum class EFiringStatus : uint8 { Reloading , Aiming, Locked, OutOfAmmo };
 
 // Forward Declaration
 class UTankBarrel;
@@ -31,6 +31,9 @@ public:
 	void Fire();
 	
 	EFiringStatus GetFiringStatus() const;
+
+	UFUNCTION(BluePrintCallable, Category = "Firing")
+	int GetRoundsLeft() const;
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
@@ -63,4 +66,6 @@ private:
 	double LastFireTime = 0;
 
 	FVector AimDirection;
+
+	int32 RoundsLeft = 3;
 };
