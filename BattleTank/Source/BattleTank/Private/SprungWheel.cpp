@@ -2,7 +2,9 @@
 
 #include "SprungWheel.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/PrimitiveComponent.h"
 #include "Engine/World.h"
+
 
 
 
